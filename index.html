@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FlyPeace - The peace of mind at thirty thousand feet</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <title>FlyPeace — the peace of mind at thirty thousand feet</title>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -43,20 +43,20 @@
             background-image: url('https://images.unsplash.com/photo-1534088568595-a066f410bcda?auto=format&fit=crop&w=2000&q=80');
             background-size: cover;
             background-position: center;
-            opacity: 0.12;
+            opacity: 0.10;
         }
 
         .container {
             position: relative;
             z-index: 1;
-            max-width: 500px;
+            max-width: 520px;
             width: 100%;
             padding: 20px;
         }
 
         .logo {
             text-align: center;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
         }
 
         .logo h1 {
@@ -81,38 +81,52 @@
             font-style: italic;
             font-size: 17px;
             color: #6b7d8e;
-            margin-bottom: 48px;
+            margin-bottom: 44px;
             font-weight: 400;
             letter-spacing: 0.3px;
         }
 
         .form-group {
-            margin-bottom: 28px;
+            margin-bottom: 24px;
         }
 
         .form-group label {
             display: block;
-            font-size: 14px;
+            font-family: 'EB Garamond', Georgia, serif;
+            font-size: 15px;
             color: #3d4f5f;
-            margin-bottom: 10px;
-            font-weight: 600;
+            margin-bottom: 8px;
+            font-weight: 500;
             letter-spacing: 0.3px;
             font-style: normal;
         }
 
-        .form-group input {
+        .form-group input,
+        .form-group select {
             width: 100%;
-            padding: 16px 0;
+            padding: 14px 0;
             border: none;
             border-bottom: 1.5px solid #d0dae4;
-            font-family: 'Playfair Display', Georgia, serif;
+            font-family: 'EB Garamond', Georgia, serif;
             font-size: 16px;
             color: #2c3e50;
             transition: all 0.3s ease;
             background: transparent;
             outline: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            border-radius: 0;
         }
 
+        .form-group select {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%236b7d8e' d='M1.41 0L6 4.58 10.59 0 12 1.41l-6 6-6-6z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 4px center;
+            cursor: pointer;
+        }
+
+        .form-group select:focus,
         .form-group input:focus {
             border-bottom-color: #5987e4;
         }
@@ -121,20 +135,35 @@
             color: #bcc7d1;
         }
 
+        .phone-row {
+            display: flex;
+            gap: 12px;
+            align-items: flex-end;
+        }
+
+        .phone-row .country-code {
+            width: 130px;
+            flex-shrink: 0;
+        }
+
+        .phone-row .phone-number {
+            flex: 1;
+        }
+
         .submit-btn {
             width: 100%;
-            padding: 16px;
+            padding: 15px;
             background: transparent;
             color: #3d4f5f;
             border: 1.5px solid #d0dae4;
             border-radius: 30px;
             font-family: 'Playfair Display', Georgia, serif;
-            font-size: 17px;
+            font-size: 16px;
             font-weight: 500;
             cursor: pointer;
             transition: all 0.3s ease;
             letter-spacing: 0.5px;
-            margin-top: 20px;
+            margin-top: 24px;
         }
 
         .submit-btn:hover {
@@ -145,6 +174,26 @@
 
         .submit-btn:active {
             transform: scale(0.98);
+        }
+
+        .legal-footer {
+            text-align: center;
+            margin-top: 36px;
+            font-family: 'EB Garamond', Georgia, serif;
+            font-size: 12px;
+            color: #9aabba;
+            letter-spacing: 0.5px;
+            line-height: 1.8;
+        }
+
+        .legal-footer .copyright {
+            font-style: normal;
+        }
+
+        .legal-footer .disclaimer {
+            font-style: italic;
+            max-width: 380px;
+            margin: 6px auto 0;
         }
 
         .success-message {
@@ -162,6 +211,7 @@
         }
 
         .success-message p {
+            font-family: 'EB Garamond', Georgia, serif;
             color: #6b7d8e;
             font-style: italic;
             font-size: 16px;
@@ -170,6 +220,7 @@
 
         .error-message {
             display: none;
+            font-family: 'EB Garamond', Georgia, serif;
             color: #c0392b;
             font-size: 14px;
             margin-bottom: 8px;
@@ -188,17 +239,26 @@
 
             .subtitle {
                 font-size: 15px;
-                margin-bottom: 36px;
+                margin-bottom: 34px;
             }
 
-            .form-group input {
-                padding: 14px 0;
+            .form-group input,
+            .form-group select {
+                padding: 12px 0;
                 font-size: 15px;
             }
 
             .submit-btn {
-                padding: 14px;
-                font-size: 16px;
+                padding: 13px;
+                font-size: 15px;
+            }
+
+            .phone-row {
+                gap: 8px;
+            }
+
+            .phone-row .country-code {
+                width: 110px;
             }
         }
     </style>
@@ -217,7 +277,7 @@
             
             <div class="form-group">
                 <label for="fullName">Full Name</label>
-                <input type="text" id="fullName" name="fullName" placeholder="Your full name" required>
+                <input type="text" id="fullName" name="fullName" placeholder="Your full name as per passport" required>
             </div>
 
             <div class="form-group">
@@ -227,11 +287,67 @@
 
             <div class="form-group">
                 <label for="phone">Phone Number</label>
-                <input type="tel" id="phone" name="phone" placeholder="+65 1234 5678" required>
+                <div class="phone-row">
+                    <select class="country-code" id="countryCode" name="countryCode" required>
+                        <option value="+65">🇸🇬 +65</option>
+                        <option value="+62">🇮🇩 +62</option>
+                        <option value="+63">🇵🇭 +63</option>
+                        <option value="+84">🇻🇳 +84</option>
+                        <option value="+66">🇹🇭 +66</option>
+                        <option value="+60">🇲🇾 +60</option>
+                        <option value="+91">🇮🇳 +91</option>
+                        <option value="+81">🇯🇵 +81</option>
+                        <option value="+82">🇰🇷 +82</option>
+                        <option value="+86">🇨🇳 +86</option>
+                        <option value="+852">🇭🇰 +852</option>
+                        <option value="+61">🇦🇺 +61</option>
+                        <option value="+64">🇳🇿 +64</option>
+                        <option value="+44">🇬🇧 +44</option>
+                        <option value="+33">🇫🇷 +33</option>
+                        <option value="+1">🇺🇸 +1</option>
+                        <option value="+41">🇨🇭 +41</option>
+                        <option value="+971">🇦🇪 +971</option>
+                        <option value="+974">🇶🇦 +974</option>
+                        <option value="+Other">Other</option>
+                    </select>
+                    <input class="phone-number" type="tel" id="phone" name="phone" placeholder="Phone number" required>
+                </div>
             </div>
 
             <div class="form-group">
-                <label for="message">Additional Information (Optional)</label>
+                <label for="citizenship">Country of Citizenship</label>
+                <select id="citizenship" name="citizenship" required>
+                    <option value="" disabled selected>Select your country</option>
+                    <option value="Singapore">🇸🇬 Singapore</option>
+                    <option value="Indonesia">🇮🇩 Indonesia</option>
+                    <option value="Philippines">🇵🇭 Philippines</option>
+                    <option value="Vietnam">🇻🇳 Vietnam</option>
+                    <option value="Thailand">🇹🇭 Thailand</option>
+                    <option value="Malaysia">🇲🇾 Malaysia</option>
+                    <option value="India">🇮🇳 India</option>
+                    <option value="China">🇨🇳 China</option>
+                    <option value="Japan">🇯🇵 Japan</option>
+                    <option value="South Korea">🇰🇷 South Korea</option>
+                    <option value="Hong Kong">🇭🇰 Hong Kong</option>
+                    <option value="Australia">🇦🇺 Australia</option>
+                    <option value="New Zealand">🇳🇿 New Zealand</option>
+                    <option value="United Kingdom">🇬🇧 United Kingdom</option>
+                    <option value="France">🇫🇷 France</option>
+                    <option value="United States">🇺🇸 United States</option>
+                    <option value="Canada">🇨🇦 Canada</option>
+                    <option value="Switzerland">🇨🇭 Switzerland</option>
+                    <option value="UAE">🇦🇪 UAE</option>
+                    <option value="Qatar">🇶🇦 Qatar</option>
+                    <option value="Myanmar">🇲🇲 Myanmar</option>
+                    <option value="Cambodia">🇰🇭 Cambodia</option>
+                    <option value="Laos">🇱🇦 Laos</option>
+                    <option value="Brunei">🇧🇳 Brunei</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="message">Additional Information <span style="font-weight:400;color:#9aabba;">— Optional</span></label>
                 <input type="text" id="message" name="message" placeholder="Anything you'd like us to know?">
             </div>
 
@@ -241,6 +357,11 @@
         <div class="success-message" id="successMessage">
             <h2>Thank you</h2>
             <p>We've received your details and will be in touch shortly.</p>
+        </div>
+
+        <div class="legal-footer">
+            <p class="copyright">© 2026 FlyPeace Pte. Ltd. All rights reserved.</p>
+            <p class="disclaimer">FlyPeace is a corporate authorised representative of Canopius Asia Pacific Pte Ltd. This form constitutes an expression of interest only and does not create any insurance contract or obligation. Eligibility is subject to underwriting approval and applicable regulatory requirements.</p>
         </div>
     </div>
 
@@ -258,8 +379,10 @@
             const fullName = document.getElementById('fullName').value.trim();
             const email = document.getElementById('email').value.trim();
             const phone = document.getElementById('phone').value.trim();
+            const countryCode = document.getElementById('countryCode').value;
+            const citizenship = document.getElementById('citizenship').value;
 
-            if (!fullName || !email || !phone) {
+            if (!fullName || !email || !phone || !citizenship) {
                 showError('Please fill in all required fields.');
                 return;
             }
