@@ -19,7 +19,7 @@
             align-items: center;
             justify-content: center;
             position: relative;
-            background-color: #1a1a2e;
+            background-color: #f0f4f8;
             padding: 20px;
         }
 
@@ -30,166 +30,170 @@
             width: 100%;
             height: 100%;
             z-index: 0;
-            opacity: 0.25;
             pointer-events: none;
         }
 
-        .background-image img {
+        .background-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            background-image: url('https://images.unsplash.com/photo-1534088568595-a066f410bcda?auto=format&fit=crop&w=2000&q=80');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.12;
         }
 
         .container {
             position: relative;
             z-index: 1;
-            background: rgba(255, 255, 255, 0.92);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border-radius: 20px;
-            padding: 40px;
             max-width: 500px;
             width: 100%;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            padding: 20px;
         }
 
         .logo {
             text-align: center;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
 
         .logo h1 {
             font-family: 'Playfair Display', Georgia, serif;
-            font-size: 48px;
+            font-size: 52px;
             font-weight: 700;
-            color: #2c3e50;
             letter-spacing: 2px;
             margin: 0;
             line-height: 1.2;
         }
 
+        .logo h1 .fly {
+            color: #000000;
+        }
+
+        .logo h1 .peace {
+            color: #5987e4;
+        }
+
         .subtitle {
             text-align: center;
             font-style: italic;
-            font-size: 16px;
-            color: #5a6c7d;
-            margin-bottom: 40px;
+            font-size: 17px;
+            color: #6b7d8e;
+            margin-bottom: 48px;
             font-weight: 400;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.3px;
         }
 
         .form-group {
-            margin-bottom: 24px;
+            margin-bottom: 28px;
         }
 
         .form-group label {
             display: block;
             font-size: 14px;
-            color: #2c3e50;
-            margin-bottom: 8px;
+            color: #3d4f5f;
+            margin-bottom: 10px;
             font-weight: 600;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.3px;
             font-style: normal;
         }
 
         .form-group input {
             width: 100%;
-            padding: 14px 16px;
-            border: 2px solid #e0e6ed;
-            border-radius: 12px;
+            padding: 16px 0;
+            border: none;
+            border-bottom: 1.5px solid #d0dae4;
             font-family: 'Playfair Display', Georgia, serif;
-            font-size: 15px;
+            font-size: 16px;
             color: #2c3e50;
             transition: all 0.3s ease;
-            background: white;
+            background: transparent;
             outline: none;
         }
 
         .form-group input:focus {
-            border-color: #3498db;
-            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+            border-bottom-color: #5987e4;
         }
 
         .form-group input::placeholder {
-            color: #b0bec5;
+            color: #bcc7d1;
         }
 
         .submit-btn {
             width: 100%;
             padding: 16px;
-            background: #2c3e50;
-            color: white;
-            border: none;
-            border-radius: 12px;
+            background: transparent;
+            color: #3d4f5f;
+            border: 1.5px solid #d0dae4;
+            border-radius: 30px;
             font-family: 'Playfair Display', Georgia, serif;
-            font-size: 18px;
-            font-weight: 600;
+            font-size: 17px;
+            font-weight: 500;
             cursor: pointer;
             transition: all 0.3s ease;
-            letter-spacing: 1px;
-            margin-top: 10px;
+            letter-spacing: 0.5px;
+            margin-top: 20px;
         }
 
         .submit-btn:hover {
-            background: #34495e;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(44, 62, 80, 0.3);
+            border-color: #5987e4;
+            color: #5987e4;
+            background: rgba(89, 135, 228, 0.04);
         }
 
         .submit-btn:active {
-            transform: translateY(0);
+            transform: scale(0.98);
         }
 
         .success-message {
             display: none;
             text-align: center;
-            padding: 40px 20px;
+            padding: 60px 20px;
         }
 
         .success-message h2 {
             font-family: 'Playfair Display', Georgia, serif;
-            color: #27ae60;
-            font-size: 24px;
-            margin-bottom: 12px;
+            color: #5987e4;
+            font-size: 26px;
+            margin-bottom: 14px;
+            font-weight: 600;
         }
 
         .success-message p {
-            color: #5a6c7d;
+            color: #6b7d8e;
             font-style: italic;
             font-size: 16px;
-            line-height: 1.6;
+            line-height: 1.7;
         }
 
         .error-message {
             display: none;
-            background: #fee2e2;
-            color: #991b1b;
-            padding: 12px 16px;
-            border-radius: 8px;
-            margin-bottom: 20px;
+            color: #c0392b;
             font-size: 14px;
+            margin-bottom: 8px;
             text-align: center;
             font-style: normal;
         }
 
         @media (max-width: 600px) {
             .container {
-                padding: 30px 25px;
-                margin: 10px;
+                padding: 10px;
             }
 
             .logo h1 {
-                font-size: 36px;
+                font-size: 40px;
             }
 
             .subtitle {
-                font-size: 14px;
-                margin-bottom: 30px;
+                font-size: 15px;
+                margin-bottom: 36px;
             }
 
             .form-group input {
-                padding: 12px 14px;
-                font-size: 14px;
+                padding: 14px 0;
+                font-size: 15px;
             }
 
             .submit-btn {
@@ -200,13 +204,11 @@
     </style>
 </head>
 <body>
-    <div class="background-image">
-        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Cdefs%3E%3ClinearGradient id='grad' x1='0%25' y1='0%25' x2='0%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%2387CEEB;stop-opacity:1'/%3E%3Cstop offset='100%25' style='stop-color:%23E8F4F8;stop-opacity:1'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='1200' height='800' fill='url(%23grad)'/%3E%3Cg opacity='0.8'%3E%3Cellipse cx='200' cy='200' rx='150' ry='60' fill='white'/%3E%3Cellipse cx='250' cy='180' rx='100' ry='45' fill='white'/%3E%3Cellipse cx='150' cy='190' rx='80' ry='35' fill='white'/%3E%3C/g%3E%3Cg opacity='0.6'%3E%3Cellipse cx='800' cy='150' rx='180' ry='70' fill='white'/%3E%3Cellipse cx='860' cy='130' rx='120' ry='50' fill='white'/%3E%3Cellipse cx='750' cy='140' rx='100' ry='40' fill='white'/%3E%3C/g%3E%3Cg opacity='0.7'%3E%3Cellipse cx='500' cy='400' rx='200' ry='80' fill='white'/%3E%3Cellipse cx='550' cy='380' rx='150' ry='60' fill='white'/%3E%3Cellipse cx='450' cy='390' rx='120' ry='50' fill='white'/%3E%3C/g%3E%3Cg opacity='0.5'%3E%3Cellipse cx='1000' cy='500' rx='160' ry='65' fill='white'/%3E%3Cellipse cx='1050' cy='480' rx='110' ry='45' fill='white'/%3E%3Cellipse cx='950' cy='490' rx='90' ry='40' fill='white'/%3E%3C/g%3E%3Cg opacity='0.4'%3E%3Cellipse cx='100' cy='600' rx='140' ry='55' fill='white'/%3E%3Cellipse cx='150' cy='580' rx='100' ry='40' fill='white'/%3E%3C/svg%3E" alt="Clouds background">
-    </div>
+    <div class="background-image"></div>
 
     <div class="container">
         <div class="logo">
-            <h1>FlyPeace</h1>
+            <h1><span class="fly">Fly</span><span class="peace">Peace</span></h1>
         </div>
         <p class="subtitle">the peace of mind at thirty thousand feet</p>
 
@@ -215,12 +217,12 @@
             
             <div class="form-group">
                 <label for="fullName">Full Name</label>
-                <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required>
+                <input type="text" id="fullName" name="fullName" placeholder="Your full name" required>
             </div>
 
             <div class="form-group">
                 <label for="email">Email Address</label>
-                <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                <input type="email" id="email" name="email" placeholder="you@example.com" required>
             </div>
 
             <div class="form-group">
@@ -230,15 +232,15 @@
 
             <div class="form-group">
                 <label for="message">Additional Information (Optional)</label>
-                <input type="text" id="message" name="message" placeholder="Any questions or specific needs?">
+                <input type="text" id="message" name="message" placeholder="Anything you'd like us to know?">
             </div>
 
-            <button type="submit" class="submit-btn">GET IN TOUCH</button>
+            <button type="submit" class="submit-btn">Send form</button>
         </form>
 
         <div class="success-message" id="successMessage">
-            <h2>Thank You</h2>
-            <p>We've received your interest and will reach out to you shortly.</p>
+            <h2>Thank you</h2>
+            <p>We've received your details and will be in touch shortly.</p>
         </div>
     </div>
 
@@ -250,11 +252,9 @@
         form.addEventListener('submit', function(e) {
             e.preventDefault();
             
-            // Hide previous messages
             errorMessage.style.display = 'none';
             successMessage.style.display = 'none';
 
-            // Basic validation
             const fullName = document.getElementById('fullName').value.trim();
             const email = document.getElementById('email').value.trim();
             const phone = document.getElementById('phone').value.trim();
@@ -269,13 +269,9 @@
                 return;
             }
 
-            // Prepare form data
             const formData = new FormData(form);
-            formData.append('to', 'serorjb@gmail.com');
 
-            // Submit using Formspree or direct email service
-            // For GitHub Pages, use a form backend service
-            fetch('https://formspree.io/f/serorjb@gmail.com', {
+            fetch('https://formspree.io/f/7640@protonmail.ch', {
                 method: 'POST',
                 body: formData,
                 headers: {
@@ -286,12 +282,11 @@
                 if (response.ok) {
                     showSuccess();
                 } else {
-                    showError('Something went wrong. Please try again or email us directly.');
+                    showError('Something went wrong. Please email us directly at 7640@protonmail.ch');
                 }
             })
             .catch(error => {
-                // Fallback: Show success anyway and handle manually
-                console.log('Form submission error:', error);
+                console.log('Form error:', error);
                 showSuccess();
             });
         });
